@@ -1,0 +1,104 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+
+\documentclass[11pt]{article}
+
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage[a4paper]{geometry}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{url}
+%\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+\usepackage{todonotes}
+\usepackage[parfill]{parskip} 
+\usepackage{tikz}
+\usepackage{eso-pic}
+\usepackage{listings}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+
+\definecolor{deltekCoolBlueLight}{RGB}{61, 183, 228}
+\definecolor{deltekCoolBlueLightLightened}{RGB}{120, 209, 241}
+\definecolor{deltekPurpleDark}{RGB}{79, 100, 127}
+\definecolor{deltekWarmBlueLight}{RGB}{103, 115, 182}
+\definecolor{deltekWarmBlueLightLightened}{RGB}{58, 145, 210}
+\definecolor{deltekWarmBlueCoolBlueLight}{RGB}{109, 203, 238}
+\definecolor{deltekBlue}{RGB}{0, 84, 159}
+\definecolor{deltekLightBlue}{RGB}{108, 180, 229}
+
+% Defining letterhead background
+\newcommand\BackgroundPic{
+	\input{backgroundPicBasicPage}	
+ }
+
+% Defining frontpage background
+\newcommand\BackgroundPicFront{
+	\input{backgroundPicFrontPage}	
+}
+\AddToShipoutPicture*{\BackgroundPicFront}
+
+% Defining front page
+\newlength{\drop}
+\newcommand*{\titleGP}{\begingroup
+\drop=0.1\textheight
+\centering
+\vspace*{\baselineskip}
+\rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt}
+\rule{\textwidth}{0.4pt}\\[\baselineskip]
+{\LARGE Documentation Template\\ For \\[0.3\baselineskip] Deltek Technology}\\[0.2\baselineskip]
+\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt}
+\rule{\textwidth}{1.6pt}\\[\baselineskip]
+\scshape
+Setting for all future documentation \\
+Copenhagen, \today\par
+\vspace*{2\baselineskip}
+Edited by \\[\baselineskip]
+{\Large Rikke Hamilton Persson \\ SECOND EDITOR \\ THIRD EDITOR\par}
+{\itshape Deltek \par}
+{\scshape 2013} \\
+\endgroup}
+
+\definecolor{xmlTag}{RGB}{65, 105, 225}
+\definecolor{xmlAttr}{RGB}{226, 00, 70}
+\definecolor{xmlComment}{RGB}{143, 188, 143}
+\lstdefinelanguage{XML}
+{
+  basicstyle=\ttfamily\color{blue}\bfseries,
+  morestring=[b]",
+  morecomment=[s]{<!--}{-->},
+  stringstyle=\color{black},
+  identifierstyle=\color{xmlAttr},
+  keywordstyle=\color{xmlTag},
+  commentstyle=\color{xmlComment},
+  morekeywords={Filter, Table, Pane, UpperPane, Column, Row, Group, Grid, Field, Compact, Actions, Action, Exclude, 
+  			    Define ,Layout, Function, Style}
+}
+
+\begin{document}
+\pagestyle{empty}
+\titleGP
+\clearpage
+%Setting page layout for rest of document
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headwidth}{\textwidth}
+\fancyhead[R]{\leftmark}
+\fancyhead[L]{}
+\fancyfoot[R]{\copyright Deltek \the\year, All Rights Reserved}
+\fancyfoot[C]{\thepage}
+
+\setlength{\headheight}{2cm}
+\AddToShipoutPicture{ \AtPageUpperLeft{\raisebox{-\height}{\BackgroundPic}}}
+
+\tableofcontents
+\newpage
+
+%Put your text in a seperate file and include it here
+\input{exampleText}
+\end{document}
