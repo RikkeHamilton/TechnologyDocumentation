@@ -1,0 +1,57 @@
+\section{Documentation}
+This is a template for documentation, containing some simple examples that could be usefull for technical documentation. This entire document can be seen as an example, including the structure of the text.
+
+\subsection{Table}
+
+In this subsection we have an example of a \emph{simple} table. This should be enough for most purposes, but if colors and such are needed that can be arranged too. 
+
+\begin{table}[!htb]\centering
+	\begin{tabular}{llr}
+		\toprule
+		\multicolumn{2}{c}{Name} \\
+		\cmidrule(r){1-2}
+		First name & Last name & office \\
+		\midrule
+		John & Doe & $ UK$ \\
+		Jesper & Andersen & $DK$ \\
+		\bottomrule
+	\end{tabular}
+	\caption{Example Table}
+	\label{tab:exampleTable}
+\end{table}
+
+Here is more text referencing \cref{tab:exampleTable} above. \Cref{tab:exampleTable} should start with a capital `T', so remember to use 
+\verb$\Cref{}$ instead of \verb$\cref{}$.
+
+\subsection{Iclude codesnippets}
+IHere's an example of how to include part of an .xml file. For this to work, you must either place a start and end marker in your source code file(as in the first example), state the actual linenumbers or use some existing text in the file as markers (second example).
+\lstset{language=XML,
+	   includerangemarker=false,
+	   rangeprefix=<!--\ ,
+	   rangesuffix=\ -->}
+	   
+\lstinputlisting[linerange={Begin\ Identifier0-End\ Identifier0},
+		        breaklines=true,
+		        showstringspaces=false]{test.mdml.xml}
+		        
+This was the first example. The syntax highlighting for xml is defined in the documentclass template file.
+
+\lstset{language=XML,
+	   includerangemarker=false,
+	   rangeprefix=<,
+	   rangesuffix=\>}
+	   
+\lstinputlisting[linerange={Compact>-Compact>},
+		        breaklines=true,
+		        showstringspaces=false]{test.mdml.xml}
+
+%\lstinputlisting[linerange={Begin\ Identifier0-End\ Identifier0},
+%		        breaklines=true,
+%		        showstringspaces=false]{test.mdml.xml}
+%\begin{lstlisting}[frame=single]
+%\lstinputlisting[linerange={<!--\ Begin\ Identifier0\ -->- 8}]{test.mdml.xml}
+%\lstinputlisting[linerange=<!--\ Begin\ Identifier0\ -->-<!--\ End\ Identifier0\ -->, 
+%			breaklines=true,
+%			showstringspaces=false]{test.mdml.xml}
+%\end{lstlisting}
+Because it really should!

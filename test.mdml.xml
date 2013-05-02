@@ -1,0 +1,39 @@
+<Layout source="Jobs">
+    <FilterPane>
+<!-- Begin Identifier0 -->
+        <Define>
+            <Function name="IsWrittenUp" value="TotalBillingPriceUpDownCurrency gt 0" />
+            <Function name="IsWrittenDown" value="TotalBillingPriceUpDownCurrency lt 0" />
+            <Style name="AlertWriteUp" ref="trafficlightGreen" condition="IsWrittenUp()" />
+            <Style name="AlertWriteDown" ref="trafficlightRed" condition="IsWrittenDown()" />
+            <Style name="FactorTooLow" parameters="Factor" ref="trafficlightRed" condition="Factor lt 1.3 and Factor != 0" />
+            <Style name="FactorLow" parameters="Factor" ref="trafficlightYellow" condition="Factor ge 1.3 and Factor lt 1.6" />
+            <Style name="FactorIsGood" parameters="Factor" ref="trafficlightGreen" condition="Factor ge 1.6" />
+        </Define>
+        <!-- I put a comment here -->
+                    <Style name="FactorIsGood" parameters="Factor" ref="trafficlightGreen" condition="Factor ge 1.6" />
+        <Filter name="Standard">
+            <Compact>
+                <Description template="^1 (^2), ^3" arguments="JobName;JobNumber;Name1" />
+            </Compact>
+<!-- End Identifier0 -->
+ <Compact>
+                <Description template="^1 (^2), ^3" arguments="test;test;test" />
+            </Compact>
+            <Columns>
+                <Field source="JobNumber" />
+                <Field source="JobName" />
+                <Field source="Name1" />
+                <Field source="JobGroup" />
+                <Field source="NotInvoiceable" />
+                <Field source="InternalJob" />
+                <Field source="Status" />
+                <Field source="ConvertedBy" />
+                <Field source="ConversionDate" />
+                <Field source="ProjectManagerNumber" />
+                <Field source="SalesPersonNumber" />
+            </Columns>
+        </Filter>
+    </FilterPane>
+</Layout>
+
