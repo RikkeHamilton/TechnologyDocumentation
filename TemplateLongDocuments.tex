@@ -1,9 +1,11 @@
 \RequirePackage[l2tabu, orthodox]{nag}
-
 \documentclass[11pt]{book}
+
 \input{CommonPreamble}
 
 \begin{document}
+%Setting front page layout
+\frontmatter
 \pagestyle{empty}
 \titleGP
 \clearpage
@@ -15,19 +17,19 @@
 \fancyhead[LO]{\leftmark}
 \fancyfoot[RE]{\copyright Deltek \the\year, All Rights Reserved}
 \fancyfoot[C]{\thepage}
-
 \setlength{\headheight}{2cm}
 \AddToShipoutPicture{ \AtPageUpperLeft{\raisebox{-\height}{\BackgroundPic}}}
 
 \tableofcontents
+\mainmatter
 
 %Put your text in a seperate file and include it here
 \input{chapterExampleText}
 \input{exampleText}
 \input{exampleText2}
 
+%Bibliography 
 \cleardoublepage
-
 \bibliography{deltekbib}
 \bibliographystyle{plain}
 \end{document}
