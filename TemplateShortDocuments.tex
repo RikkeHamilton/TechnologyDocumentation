@@ -13,7 +13,7 @@
 \usepackage{array}
 \usepackage{siunitx}
 \usepackage{url}
-%\usepackage[hidelinks]{hyperref}
+\usepackage{hyperref}
 \usepackage{cleveref}
 \usepackage{todonotes}
 \usepackage[parfill]{parskip} 
@@ -31,6 +31,14 @@
 \definecolor{deltekWarmBlueCoolBlueLight}{RGB}{109, 203, 238}
 \definecolor{deltekBlue}{RGB}{0, 84, 159}
 \definecolor{deltekLightBlue}{RGB}{108, 180, 229}
+
+\hypersetup{
+	colorlinks=true,
+	urlcolor=blue,
+	linkcolor=black,
+	citecolor = black,
+	filecolor = black
+}
 
 % Defining letterhead background
 \newcommand\BackgroundPic{
@@ -64,20 +72,37 @@ Edited by \\[\baselineskip]
 {\scshape 2013} \\
 \endgroup}
 
-\definecolor{xmlTag}{RGB}{65, 105, 225}
-\definecolor{xmlAttr}{RGB}{226, 00, 70}
-\definecolor{xmlComment}{RGB}{143, 188, 143}
+\definecolor{xmlTag}{RGB}{105, 139, 105}
+\definecolor{xmlAttr}{RGB}{139, 0, 139}
+\definecolor{xmlComment}{RGB}{58, 95, 205}
+\definecolor{xmlString}{RGB}{0, 0, 238}
 \lstdefinelanguage{XML}
 {
-  basicstyle=\ttfamily\color{blue}\bfseries,
+  basicstyle=\footnotesize\ttfamily\color{xmlTag}\bfseries,
   morestring=[b]",
   morecomment=[s]{<!--}{-->},
-  stringstyle=\color{black},
+  stringstyle=\color{xmlString}\textit,
   identifierstyle=\color{xmlAttr},
   keywordstyle=\color{xmlTag},
   commentstyle=\color{xmlComment},
-  morekeywords={Filter, Table, Pane, UpperPane, Column, Row, Group, Grid, Field, Compact, Actions, Action, Exclude, 
-  			    Define ,Layout, Function, Style}
+  showstringspaces=false,
+  breaklines=true,
+  morekeywords={MMSL, MDSL, MWSL, MDSL, MCSL, MNSL,
+  			    Menu, Workspace, Layout, 
+  			    FilterPane, LowerPane, Pane, UpperPane, 
+  			    Filter, Form, Browser, Report, Table,
+  			    ControlBar, Selection, Option, Compact, Description, Columns,
+  			    Column, Row, Group, Field, UnitField, Reference, Boolean, Grid, Header
+  			    Actions, Action, Exclude, Order,
+  			    Define, If, Else, ElseIf, Function, Value, Style,
+  			    Url, Query, Link, Target, Focus, Match, Waypoint, Override, 
+  			    Trigger, Update, Check, Error, Assign, Refresh,
+  			    Wizard, Page,
+  			    Create, Delete, Update, Print, PrintThis,
+  			    Card, Expansions, Assistants, Mount, Bind, With, Hidden, Section, Formation, 
+  			    Container, Fields, Read, ForeignKeys, ForeignKey, SupplementField,
+  			    Insert, Add, Move, Up, Down, Indent, Outdent,
+  			    Access, Role, Environment, Binding, Configuration, Dictionaries, Restriction, <, />}
 }
 
 \begin{document}
