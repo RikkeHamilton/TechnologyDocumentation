@@ -1,0 +1,104 @@
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage[nottoc]{tocbibind}
+\usepackage{cite}
+\usepackage{amsmath, amssymb}
+\usepackage[a4paper]{geometry}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{todonotes}
+\usepackage[parfill]{parskip} 
+\usepackage{tikz}
+\usepackage{eso-pic}
+\usepackage{listings}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+
+\definecolor{deltekCoolBlueLight}{RGB}{61, 183, 228}
+\definecolor{deltekCoolBlueLightLightened}{RGB}{120, 209, 241}
+\definecolor{deltekPurpleDark}{RGB}{79, 100, 127}
+\definecolor{deltekWarmBlueLight}{RGB}{103, 115, 182}
+\definecolor{deltekWarmBlueLightLightened}{RGB}{58, 145, 210}
+\definecolor{deltekWarmBlueCoolBlueLight}{RGB}{109, 203, 238}
+\definecolor{deltekBlue}{RGB}{0, 84, 159}
+\definecolor{deltekLightBlue}{RGB}{108, 180, 229}
+
+\hypersetup{
+	colorlinks=true,
+	urlcolor=blue,
+	linkcolor=black,
+	citecolor = black,
+	filecolor = black
+}
+
+% Defining letterhead background
+\newcommand\BackgroundPic{
+	\input{backgroundPicBasicPage}	
+ }
+
+% Defining frontpage background
+\newcommand\BackgroundPicFront{
+	\input{backgroundPicFrontPage}	
+}
+\AddToShipoutPicture*{\BackgroundPicFront}
+
+% Defining front page
+\newlength{\drop}
+\newcommand*{\titleGP}{\begingroup
+\drop=0.1\textheight
+\centering
+\vspace*{\baselineskip}
+\rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt}
+\rule{\textwidth}{0.4pt}\\[\baselineskip]
+{\LARGE Documentation Template\\ For \\[0.3\baselineskip] Deltek Technology}\\[0.2\baselineskip]
+\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt}
+\rule{\textwidth}{1.6pt}\\[\baselineskip]
+\scshape
+Setting for all future documentation \\
+Copenhagen, \today\par
+\vspace*{2\baselineskip}
+Edited by \\[\baselineskip]
+{\Large Rikke Hamilton Persson \\ SECOND EDITOR \\ THIRD EDITOR\par}
+{\itshape Deltek \par}
+{\scshape 2013} \\
+\endgroup}
+
+\definecolor{xmlTag}{RGB}{105, 139, 105}
+\definecolor{xmlAttr}{RGB}{139, 0, 139}
+\definecolor{xmlComment}{RGB}{58, 95, 205}
+\definecolor{xmlString}{RGB}{0, 0, 238}
+\lstdefinelanguage{XML}
+{
+  basicstyle=\footnotesize\ttfamily\color{xmlTag}\bfseries,
+  morestring=[b]",
+  morecomment=[s]{<!--}{-->},
+  stringstyle=\color{xmlString}\textit,
+  identifierstyle=\color{xmlAttr},
+  keywordstyle=\color{xmlTag},
+  commentstyle=\color{xmlComment},
+  showstringspaces=false,
+  breaklines=true,
+  morekeywords={MMSL, MDSL, MWSL, MDSL, MCSL, MNSL,
+  			    Menu, Workspace, Layout, 
+  			    FilterPane, LowerPane, Pane, UpperPane, 
+  			    Filter, Form, Browser, Report, Table,
+  			    ControlBar, Selection, Option, Compact, Description, Columns,
+  			    Column, Row, Group, Field, UnitField, Reference, Boolean, Grid, Header
+  			    Actions, Action, Exclude, Order,
+  			    Define, If, Else, ElseIf, Function, Value, Style,
+  			    Url, Query, Link, Target, Focus, Match, Waypoint, Override, 
+  			    Trigger, Update, Check, Error, Assign, Refresh,
+  			    Wizard, Page,
+  			    Create, Delete, Update, Print, PrintThis,
+  			    Card, Expansions, Assistants, Mount, Bind, With, Hidden, Section, Formation, 
+  			    Container, Fields, Read, ForeignKeys, ForeignKey, SupplementField,
+  			    Insert, Add, Move, Up, Down, Indent, Outdent,
+  			    Access, Role, Environment, Binding, Configuration, Dictionaries, Restriction, <, />}
+}

@@ -1,7 +1,6 @@
 \RequirePackage[l2tabu, orthodox]{nag}
 
-\documentclass[11pt]{article}
-
+\documentclass[11pt]{book}
 \input{CommonPreamble}
 
 \begin{document}
@@ -12,21 +11,23 @@
 \pagestyle{fancy}
 \fancyhf{}
 \setlength{\headwidth}{\textwidth}
-\fancyhead[R]{\leftmark}
-\fancyhead[L]{}
-\fancyfoot[R]{\copyright Deltek \the\year, All Rights Reserved}
+\fancyhead[RE]{\rightmark}
+\fancyhead[LO]{\leftmark}
+\fancyfoot[RE]{\copyright Deltek \the\year, All Rights Reserved}
 \fancyfoot[C]{\thepage}
 
 \setlength{\headheight}{2cm}
 \AddToShipoutPicture{ \AtPageUpperLeft{\raisebox{-\height}{\BackgroundPic}}}
 
 \tableofcontents
-\newpage
 
 %Put your text in a seperate file and include it here
+\input{chapterExampleText}
 \input{exampleText}
+\input{exampleText2}
 
 \cleardoublepage
+
 \bibliography{deltekbib}
 \bibliographystyle{plain}
 \end{document}
